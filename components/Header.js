@@ -137,12 +137,6 @@ export default function Header() {
               <Heart className="w-5 h-5" />
               <SavedCount />
             </Link>
-            <Link href="/login" className="px-4 py-2 text-foreground/70 hover:text-primary transition-colors duration-200 font-medium text-sm border border-border/40 rounded-lg hover:border-primary/40 hover:bg-primary/5">
-              Sign In
-            </Link>
-            <Link href="/signup" className="px-6 py-2 gradient-primary text-primary-foreground rounded-lg hover:shadow-lg hover:glow-primary transition-all duration-300 font-semibold text-sm transform hover:scale-105">
-              Get Started
-            </Link>
           </div>
 
           <button
