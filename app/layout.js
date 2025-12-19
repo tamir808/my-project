@@ -1,4 +1,4 @@
-
+"use client "
 import './global.css';
 import Header from '@/components/Header';
 import { Suspense } from 'react';
