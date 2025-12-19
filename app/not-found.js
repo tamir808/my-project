@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 
 export default function NotFound() {
@@ -14,18 +12,18 @@ export default function NotFound() {
           Oops! The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link 
+          <a 
             href="/" 
-            className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-lg hover:shadow-xl"
+            className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:opacity-90 shadow-lg hover:shadow-xl"
           >
             Return Home
-          </Link>
-          <Link 
+          </a>
+          <a 
             href="/port" 
-            className="px-6 py-3 border-2 border-emerald-500/30 text-emerald-400 font-medium rounded-lg hover:bg-emerald-500/10 transition-colors duration-200"
+            className="px-6 py-3 border-2 border-emerald-500/30 text-emerald-400 font-medium rounded-lg hover:bg-emerald-500/10"
           >
             View Portfolio
-          </Link>
+          </a>
         </div>
       </div>
       
