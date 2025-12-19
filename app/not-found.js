@@ -1,13 +1,19 @@
 import { notFound } from 'next/navigation';
-import NotFound from '@/components/NotFound';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
+// This is a client component for handling 404 errors
 export default function NotFoundPage() {
-  if (typeof window === 'undefined') {
-    // On the server, trigger the not found
-    notFound();
-    return null;
-  }
+  const router = useRouter();
   
-  // On the client, render the NotFound component
-  return <NotFound />;
+  useEffect(() => {
+    // Redirect to the custom 404 page
+    router.replace('/not-found');
+  }, [router]);
+
+  // Return null or a loading indicator while redirecting
+  return null;
 }
+
+// This tells Next.js to use this as the not-found page
+export const dynamic = 'force-dynamic';
