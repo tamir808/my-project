@@ -14,9 +14,9 @@ export default function RootLayout({ children}) {
       <body className="min-h-screen bg-white dark:bg-gray-900">
         <Header />
         <main>
-        <Suspense fallback={<div>Loading...</div>}>
-          {children}
-        </Suspense>
+       <Suspense>
+     <ProgressBarProvider>{children}</ProgressBarProvider>
+</Suspense>
         </main>
       </body>
     </html>
