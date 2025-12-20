@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import { universities } from "../../results/page";
@@ -48,7 +48,9 @@ export default function UniversityDetail() {
     country: university.country,
     image: university.image,
     majors: university.majors,
-    website: university.website || `https://www.${university.name.toLowerCase().replace(/\s+/g, '')}.edu`
+    website:
+      university.website ||
+      `https://www.${university.name.toLowerCase().replace(/\s+/g, "")}.edu`,
   };
 
   const [isSaved, setIsSaved] = useState(false);
@@ -81,7 +83,10 @@ export default function UniversityDetail() {
     students: Math.floor(Math.random() * 30000) + 10000,
     acceptanceRate: (Math.random() * 30 + 5).toFixed(1) + "%",
     tuition: {
-      international: `$${(Math.random() * 40000 + 15000).toLocaleString()}/year`,
+      international: `$${(
+        Math.random() * 40000 +
+        15000
+      ).toLocaleString()}/year`,
     },
     applicationDeadlines: {
       fall: "January 15",
@@ -112,9 +117,7 @@ export default function UniversityDetail() {
 
               <div className="md:w-2/3 flex flex-col justify-between">
                 <div>
-                  <h1 className="text-4xl font-bold mb-2">
-                    {university.name}
-                  </h1>
+                  <h1 className="text-4xl font-bold mb-2">{university.name}</h1>
 
                   <div className="flex items-center text-muted-foreground mb-4">
                     <FaMapMarkerAlt className="mr-2" />
@@ -141,8 +144,8 @@ export default function UniversityDetail() {
                       )}`}
                       className="px-6 py-2 bg-primary text-white rounded-lg"
                     >
-                    Apply Now
-                  </Link>
+                      Apply Now
+                    </Link>
                   </Suspense>
 
                   <button
@@ -154,12 +157,19 @@ export default function UniversityDetail() {
                           : "border bg-card hover:bg-gray-50"
                       }`}
                   >
-                    <FaHeart className={isSaved ? "fill-current text-green-600" : ""} />
+                    <FaHeart
+                      className={isSaved ? "fill-current text-green-600" : ""}
+                    />
                     {isSaved ? "Saved" : "Save University"}
                   </button>
 
                   <a
-                    href={university.website || `https://www.${university.name.toLowerCase().replace(/\s+/g, '')}.edu`}
+                    href={
+                      university.website ||
+                      `https://www.${university.name
+                        .toLowerCase()
+                        .replace(/\s+/g, "")}.edu`
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 flex items-center gap-2 hover:underline"
