@@ -281,5 +281,6 @@ export default function ApplicationPage() {
         </div>
       </div>
     </div>
+  
   );
 }
