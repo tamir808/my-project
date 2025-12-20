@@ -134,14 +134,16 @@ export default function UniversityDetail() {
                 </div>
 
                 <div className="flex gap-3">
-                  <Link
-                    href={`/apply?university=${encodeURIComponent(
-                      university.name
-                    )}`}
-                    className="px-6 py-2 bg-primary text-white rounded-lg"
-                  >
+                  <Suspense>
+                    <Link
+                      href={`/apply?university=${encodeURIComponent(
+                        university.name
+                      )}`}
+                      className="px-6 py-2 bg-primary text-white rounded-lg"
+                    >
                     Apply Now
                   </Link>
+                  </Suspense>
 
                   <button
                     onClick={toggleSave}
