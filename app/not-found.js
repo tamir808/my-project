@@ -1,6 +1,5 @@
-import { notFound } from 'next/navigation';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+
+
 
 // This is a client component for handling 404 errors
 export default function NotFoundPage() {

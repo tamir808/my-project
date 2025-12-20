@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { FaArrowLeft, FaUpload, FaGraduationCap, FaUserGraduate, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import {  FaUpload, FaGraduationCap, FaUserGraduate, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function ApplicationPage() {
   const router = useRouter();
